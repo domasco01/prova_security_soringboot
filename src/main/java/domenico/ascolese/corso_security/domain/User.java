@@ -18,4 +18,10 @@ public class User {
 
     private String role; // esempio: "ROLE_USER", "ROLE_ADMIN"
 
+    private String nome;
+
+    private String cognome;
+
+    private String codiceFiscale;
+
 }

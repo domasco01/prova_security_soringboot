@@ -21,6 +21,9 @@ public class DemoApplication {
             user.setUsername("admin");
             user.setPassword(passwordEncoder.encode("admin123"));
             user.setRole("ROLE_ADMIN");
+            user.setNome("Domenico");
+            user.setCognome("Ascolese");
+            user.setCodiceFiscale("SCLDN12D2WERRC3");
             userRepository.save(user);
         }
     }

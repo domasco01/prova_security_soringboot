@@ -1,8 +1,11 @@
 package domenico.ascolese.corso_security.controller;
 
+import domenico.ascolese.corso_security.domain.User;
 import domenico.ascolese.corso_security.dto.JwtAuthResponse;
 import domenico.ascolese.corso_security.dto.LoginRequest;
+import domenico.ascolese.corso_security.dto.UserDto;
 import domenico.ascolese.corso_security.security.JwtTokenProvider;
+import domenico.ascolese.corso_security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +26,9 @@ public class AuthController {
 
     @Autowired
     private JwtTokenProvider tokenProvider;
+
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity<JwtAuthResponse> authenticateUser(
@@ -45,4 +51,11 @@ public class AuthController {
         // 4. Restituisci token al client
         return ResponseEntity.ok(new JwtAuthResponse(jwt));
     }
+
+//    @PostMapping("/register")
+//    public ResponseEntity<UserDto> registrazione(@RequestBody UserDto userDto) {
+//
+//
+//        return
+//    }
 }
